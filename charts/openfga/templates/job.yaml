@@ -13,6 +13,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  backoffLimit: 3
   template:
     metadata:
       {{- with .Values.migrate.annotations }}
@@ -79,5 +80,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-  backoffLimit: 1
 {{- end }}
